@@ -1677,3 +1677,111 @@
     .contact-card{grid-template-columns:1fr;}
     .input-row{flex-direction:column}
   }
+
+/* 🟢 OPTIMIZACIÓN GENERAL PARA MÓVILES */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    padding: 14px 20px;
+  }
+
+  .navbar ul {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 18px;
+    background: rgba(9, 16, 28, 0.96);
+    padding: 24px 0;
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  .navbar.open ul {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* BOTÓN HAMBURGUESA */
+  .navbar .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  .navbar .menu-toggle span {
+    display: block;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .navbar.open .menu-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .navbar.open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar.open .menu-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* NAV LINKS */
+  .navbar a {
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+  }
+
+  /* CONTACTO */
+  .contact-section {
+    padding: 40px 16px;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .contact-info h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  .contact-tags {
+    justify-content: center;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .status {
+    text-align: center;
+    display: block;
+    margin-top: 6px;
+  }
+}
+
