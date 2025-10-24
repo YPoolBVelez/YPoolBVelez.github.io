@@ -45,3 +45,22 @@
     });
   });
 })();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menuToggle");
+  const navbar = document.querySelector(".navbar");
+
+  if (toggle && navbar) {
+    toggle.addEventListener("click", () => {
+      navbar.classList.toggle("open");
+    });
+
+    // Cierra el menú al hacer clic en un enlace
+    document.querySelectorAll(".navbar a").forEach(link => {
+      link.addEventListener("click", () => {
+        navbar.classList.remove("open");
+      });
+    });
+  }
+});
+
