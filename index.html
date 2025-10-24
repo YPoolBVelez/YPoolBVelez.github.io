@@ -732,7 +732,7 @@ El sitio incluye secciones informativas, catálogo de cursos, formulario de cont
         </div>
       </aside>
 
-      <form class="contact-form" id="contactForm" action="submit-form.php" method="POST" novalidate>
+      <form class="contact-form" id="contactForm" action="https://formsubmit.co/yanpoolvelez@gmail.com" method="POST">>
         <div class="input-row">
           <label class="field">
             <input type="text" name="name" id="name" placeholder="Nombre completo" required>
@@ -750,6 +750,11 @@ El sitio incluye secciones informativas, catálogo de cursos, formulario de cont
         <label class="field textarea-field">
           <textarea name="message" id="message" placeholder="Mensaje (cuéntame brevemente por qué soy un buen fit)" rows="6" required></textarea>
         </label>
+
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portafolio web">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+         <input type="hidden" name="_next" value="index.html">
 
         <div class="actions">
           <button type="submit" id="submitButton" class="btn">Enviar mensaje</button>
