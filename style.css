@@ -1785,3 +1785,16 @@
   }
 }
 
+/* 🔧 Ajuste visual del texto en el formulario */
+.contact-form input,
+.contact-form textarea {
+  color: #ffffff !important; /* texto blanco */
+  caret-color: #ffffff;      /* cursor blanco */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55); /* placeholder más suave */
+}
+
+
