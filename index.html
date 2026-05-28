@@ -3,776 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio de Yan Pool Bedoya, Desarrollador Web Full Stack especializado en React, Node.js, DevOps, Kubernetes y más.">
-    <meta name="keywords" content="Yan Pool, Desarrollador Web, React, Node.js, DevOps, Kubernetes, Docker, Git">
-    <meta name="author" content="Yan Pool Bedoya">
-    <title>Portafolio de Yan Pool</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" defer></script>
+    <meta name="description" content="Portafolio de Yan Pool Bedoya, DevOps, CI/CD, Monitoring & RPA Engineer. Labs interactivos: Git, K8s, Docker, Prometheus/Grafana, RPA y pipelines CI/CD.">
+    <meta name="keywords" content="Yan Pool, DevOps, CI/CD, GitHub Actions, Jenkins, Prometheus, Grafana, RPA, Kubernetes, Docker, .NET">
+    <meta name="author" content="Yan Pool Bedoya Velez">
+    <meta property="og:title" content="Yan Pool Bedoya – DevOps, CI/CD, Monitoring & RPA Engineer">
+    <meta property="og:description" content="Labs interactivos: pipelines CI/CD, dashboards de monitoreo, RPA y comandos reales. Proyecto de título con .NET C#.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ypoolbvelez.github.io">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yan Pool Bedoya Velez",
+      "jobTitle": "DevOps, CI/CD, Monitoring & RPA Engineer",
+      "skills": "Kubernetes, Docker, Git, GitHub Actions, Jenkins, Prometheus, Grafana, RPA, .NET C#, AWS"
+    }
+    </script>
+    <title>Yan Pool Bedoya – DevOps, CI/CD, Monitoring & RPA Engineer | Labs interactivos</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
 <body>
-
-<header class="navbar">
-  <div class="nav-container">
-    <div class="brand">Yan Pool Bedoya</div>
-
-    <!-- Botón Hamburguesa -->
-    <div class="menu-toggle" id="menuToggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <!-- Enlaces -->
-    <ul>
-      <li><a href="#home" aria-current="page">Home</a></li>
-      <li><a href="#about-me">Sobre Mí</a></li>
-      <li><a href="#skills">Habilidades</a></li>
-      <li><a href="#experience">Experiencia</a></li>
-      <li><a href="#projects">Proyectos</a></li>
-      <li><a href="#education">Educación</a></li>
-      <li><a href="#certifications">Certificaciones</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
-  </div>
-</header>
-
-    <!-- Página Home -->
+    <canvas id="bg-lines"></canvas>
     <div class="page-wrapper">
-    <section id="home" class="hero fade-in">
-        <div class="floating-badges">
+        <header class="navbar" id="navbar">
+            <div class="nav-container">
+                <div class="brand">Yan Pool Bedoya</div>
+                <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre Mí</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#cicd-lab">CI/CD Lab</a></li>
+                    <li><a href="#devops-lab">DevOps Lab</a></li>
+                    <li><a href="#monitoring-lab">Monitoring</a></li>
+                    <li><a href="#rpa-lab">RPA Lab</a></li>
+                    <li><a href="#experience">Experiencia</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </header>
 
-        </div>
-        <div class="hero-content">
-            <div class="hero-copy">
-                <span class="eyebrow">Yan Pool Bedoya Vélez</span>
-                <h1 class="headline">Ingeniero en Informática | DevOps Engineer & Software Developer</h1>
-                <p class="title">Automatizo procesos, fortalezco sistemas y escalo productos con seguridad.</p>
-                <p class="tagline">Me apasiona construir sistemas que conecten rendimiento, seguridad y entrega continua.</p>
-                <div class="hero-highlights">
-                    <div class="highlight">
-                        <div class="highlight-icon"><i class="fas fa-network-wired"></i></div>
-                        <div>
-                            <h4>Arquitecturas resilientes</h4>
-                            <p>Microservicios, contenedores y observabilidad lista para producción.</p>
-                        </div>
-                    </div>
-                    <div class="highlight">
-                        <div class="highlight-icon"><i class="fas fa-chart-line"></i></div>
-                        <div>
-                            <h4>KPIs accionables</h4>
-                            <p>Dashboards ejecutivos que convierten datos en decisiones.</p>
-                        </div>
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <span class="eyebrow">Yan Pool Bedoya Velez</span>
+                    <h1>Ingeniero DevOps, CI/CD, Monitoring & RPA</h1>
+                    <p>Automatizo pipelines, construyo dashboards y orquesto infraestructura.</p>
+                    <div class="hero-buttons">
+                        <a class="btn" href="https://www.linkedin.com/in/yan-pool-bedoya-velez/" target="_blank">LinkedIn</a>
+                        <a class="btn" href="#cicd-lab">Explorar Labs</a>
                     </div>
                 </div>
-                <div class="cta-group">
-                    <a class="cta-primary" href="https://www.linkedin.com/in/yanpool" target="_blank" rel="noopener noreferrer">Conectar en LinkedIn</a>
-                    <a class="cta-secondary" href="#experience">Ver experiencia</a>
+                <div class="hero-icons">
+                    <h3>Especialidades</h3>
+                    <p>CI/CD · Observabilidad · RPA · Cloud Native</p>
+                    <div class="icon-group">
+                        <i class="fab fa-github fa-3x"></i>
+                        <i class="fab fa-jenkins fa-3x"></i>
+                        <i class="fab fa-docker fa-3x"></i>
+                        <i class="fas fa-chart-line fa-3x"></i>
+                    </div>
                 </div>
             </div>
-            <div class="hero-metrics">
-                <div class="metric">
-                    <span class="metric-value">Experiencia de usuario optimizada</span>
-                    <span class="metric-label">Diseño centrado en el cliente que potencia navegación y conversión digital.</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">Arquitectura escalable</span>
-                    <span class="metric-label">Microservicios orquestados en Kubernetes listos para crecer sin fricciones.</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-value">Automatización DevOps</span>
-                    <span class="metric-label">Pipelines CI/CD con GitHub Actions que reducen riesgos y aceleran el delivery.</span>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Página Sobre mí -->
-    <section id="about-me" class="about fade-in">
-        <div class="about-container">
+        <section id="about">
             <div class="about-card">
-                <span class="badge badge-soft" style="background-color: #071029;">Sobre mí</span>
-                <h2>Diseño productos escalables y construyo equipos que confían en la entrega continua.</h2>
-                <p>Soy ingeniero full stack con enfoque DevOps, especializado en liderar squads multidisciplinarios para desarrollar plataformas e-commerce, soluciones cloud nativas y sistemas de analítica industrial, garantizando seguridad, rendimiento y gobernanza en cada entrega.</p>
+                <h2>Sobre Mí</h2>
+                <p>Ingeniero DevOps con pasión por la automatización, pipelines CI/CD y observabilidad. He reducido incidentes en 55% y acelerado despliegues en 60% mediante GitHub Actions, Jenkins, contenedores, dashboards de monitoreo y RPA. Experto en integración continua, entrega continua y despliegue automatizado.</p>
                 <div class="about-grid">
-                    <div>
-                        <h3><i class="fas fa-cogs"></i> Stack principal</h3>
-                        <p>React, Angular, Node.js, PHP, Java, Docker, Kubernetes, Terraform, AWS, GitHub Actions.</p>
-                    </div>
-                    <div>
-                        <h3><i class="fas fa-user-check"></i> Rol habitual</h3>
-                        <p>Arquitectura de soluciones, consultoría técnica, liderazgo de producto y automatización operativa.</p>
-                    </div>
-                    <div>
-                        <h3><i class="fas fa-shield-alt"></i> Seguridad</h3>
-                        <p>Integro prácticas DevSecOps con análisis SAST/DAST, monitoreo SIEM y cumplimiento normativo continuo.</p>
-                    </div>
-                    <div>
-                        <h3><i class="fas fa-users"></i> Liderazgo</h3>
-                        <p>Mentor de desarrolladores, facilitador de metodologías ágiles y promotor de métricas DORA para optimizar el delivery.</p>
-                    </div>
+                    <div><i class="fas fa-code-branch"></i> <strong>CI/CD</strong><br>GitHub Actions, Jenkins, GitLab CI</div>
+                    <div><i class="fas fa-chart-line"></i> <strong>Observabilidad</strong><br>Prometheus, Grafana, Loki</div>
+                    <div><i class="fas fa-robot"></i> <strong>RPA</strong><br>UiPath, Python, Selenium</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Página Experiencia -->
-    <section id="experience" class="experience fade-in">
-        <h2>Experiencia Profesional</h2>
-        <p class="section-subtitle">Roles clave donde consolidé habilidades en DevOps, automatización y liderazgo técnico, impulsando la entrega continua y la resiliencia operativa.</p>
-        <div class="timeline">
-            <article class="experience-card">
-                <div class="experience-meta">
-                    <span><i class="fas fa-building"></i> Americar Tech</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Santiago de Chile</span>
-                    <span><i class="fas fa-calendar-alt"></i> Jun 2025 - Sept 2025</span>
+        <section id="skills">
+            <h2>Habilidades Clave</h2>
+            <div class="skills-container">
+                <span class="skill-tag">GitHub Actions</span>
+                <span class="skill-tag">Jenkins</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Prometheus</span>
+                <span class="skill-tag">Grafana</span>
+                <span class="skill-tag">RPA (UiPath)</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">.NET C#</span>
+                <span class="skill-tag">AWS</span>
+            </div>
+        </section>
+
+        <!-- CI/CD LAB -->
+        <section id="cicd-lab" class="terminal-card">
+            <h2>🔄 CI/CD Pipelines Lab</h2>
+            <p>Simulación de GitHub Actions, Jenkins, pruebas y despliegue</p>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
+                    <span>cicd-simulator</span>
                 </div>
-                <h3>Ingeniero DevOps</h3>
-                <h4>Automatización CI/CD y plataformas cloud-native</h4>
-                <p>Escalo la eficiencia del delivery en segmentos automotrices mediante pipelines automatizados y observabilidad de punta a punta.</p>
-                <ul>
-                    <li>Automaticé pipelines CI/CD en AWS con Docker, Kubernetes, Bitbucket y Terraform, acelerando despliegues en 60%.</li>
-                    <li>Fortalecí observabilidad y autoescalado con Kubernetes y Helm para sostener 99.9% de disponibilidad.</li>
-                    <li>Extendí prácticas DevSecOps con scripting y orquestación de contenedores, elevando la calidad entregada.</li>
-                </ul>
-            </article>
-            <article class="experience-card">
-                <div class="experience-meta">
-                    <span><i class="fas fa-building"></i> Emprendimiento Propio</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Santiago de Chile</span>
-                    <span><i class="fas fa-calendar-alt"></i> Mar 2025 - Presente</span>
+                <div id="cicd-terminal"></div>
+            </div>
+            <div class="pipeline-viz">
+                <div class="pipeline-stage" id="stage-build"><i class="fas fa-code-branch"></i> Build</div>
+                <div class="pipeline-stage" id="stage-test"><i class="fas fa-vial"></i> Test</div>
+                <div class="pipeline-stage" id="stage-scan"><i class="fas fa-shield-alt"></i> Security</div>
+                <div class="pipeline-stage" id="stage-package"><i class="fas fa-box"></i> Package</div>
+                <div class="pipeline-stage" id="stage-deploy"><i class="fas fa-cloud-upload-alt"></i> Deploy</div>
+            </div>
+        </section>
+
+        <!-- DevOps LAB -->
+        <section id="devops-lab" class="terminal-card">
+            <h2>⚙️ DevOps Lab</h2>
+            <p>Comandos reales de Git, Kubernetes y Docker</p>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
+                    <span>bash - devops</span>
                 </div>
-                <h3>Fundador y Desarrollador Web</h3>
-                <h4>Creación de páginas web a medida</h4>
-                <p>Lidero un emprendimiento enfocado en experiencias digitales para empresas y academias, desde discovery hasta despliegue.</p>
-                <ul>
-                    <li>Mejoré el flujo de usuario para facilitar la navegación y la conversión en el e-commerce.</li>
-                    <li>Fortalecí la escalabilidad y la operación continua con herramientas de observabilidad y contenedores.</li>
-                    <li>Optimicé el tiempo de despliegue mediante prácticas DevOps y automatización con GitHub Actions.</li>
-                </ul>
-            </article>
-            <article class="experience-card">
-                <div class="experience-meta">
-                    <span><i class="fas fa-building"></i> Grupo Tawa</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Santiago de Chile</span>
-                    <span><i class="fas fa-calendar-alt"></i> Oct 2024 - Mar 2025</span>
+                <div id="devops-terminal"></div>
+            </div>
+            <div class="cluster-viz">
+                <h3>Clúster Kubernetes</h3>
+                <canvas id="k8sCanvas" width="800" height="250"></canvas>
+            </div>
+        </section>
+
+        <!-- Monitoring LAB -->
+        <section id="monitoring-lab" class="terminal-card">
+            <h2>📊 Monitoring Stack Lab - Grafana Dashboard</h2>
+            <p>Métricas en tiempo real, alertas y consultas PromQL</p>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
+                    <span>prometheus & loki</span>
                 </div>
-                <h3>Analista de Operaciones</h3>
-                <h4>Soporte Odoo y servicio técnico multiplataforma</h4>
-                <p>Proporcioné soporte técnico integral, asegurando continuidad operativa y satisfactoria experiencia de clientes.</p>
-                <ul>
-                    <li>Coordiné proyectos operativos y seguimiento de entregas para cumplir plazos clave de tiendas Samsung.</li>
-                    <li>Implementé herramientas y tecnologías de punto de venta (POS, redes, periféricos) elevando la eficiencia del equipo.</li>
-                    <li>Capacité nuevos ingresos y gestioné proveedores tecnológicos, asegurando SLA críticos y continuidad operativa.</li>
-                </ul>
-            </article>
-            <article class="experience-card">
-                <div class="experience-meta">
-                    <span><i class="fas fa-building"></i> Asesorías Valor Único</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Santiago de Chile</span>
-                    <span><i class="fas fa-calendar-alt"></i> May 2023 - Jul 2024</span>
+                <div id="monitoring-terminal"></div>
+            </div>
+            <div class="dashboard">
+                <div class="dashboard-title">📈 Dashboard - Producción</div>
+                <div class="dashboard-grid">
+                    <div class="dashboard-panel"><h4>CPU Usage</h4><div class="value" id="cpuValue">42.5</div><canvas class="sparkline-canvas" id="cpuSpark"></canvas></div>
+                    <div class="dashboard-panel"><h4>Memory Usage</h4><div class="value" id="memValue">68.2</div><canvas class="sparkline-canvas" id="memSpark"></canvas></div>
+                    <div class="dashboard-panel"><h4>Request Rate</h4><div class="value" id="reqValue">1250</div><canvas class="sparkline-canvas" id="reqSpark"></canvas></div>
+                    <div class="dashboard-panel"><h4>Error Rate</h4><div class="value" id="errValue">0.23</div><canvas class="sparkline-canvas" id="errSpark"></canvas></div>
                 </div>
-                <h3>Ingeniero DevOps Practitioner</h3>
-                <h4>BCI – Solicitud Única de Créditos (SUC)</h4>
-                <p>Gestioné despliegues críticos en banca, con metodologías ágiles y automatización continua para cumplir objetivos regulatorios.</p>
-                <ul>
-                    <li>Lideré pipelines con Jenkins, GitHub Actions y XL Release para el BCI, entregando releases regulatorios sin retrasos.</li>
-                    <li>Guié a equipos de desarrollo desde onboarding hasta producción en arquitecturas monolíticas y microservicios.</li>
-                    <li>Integré Veracode y prácticas DevSecOps, mitigando vulnerabilidades críticas y reforzando compliance.</li>
-                </ul>
-            </article>
-            <article class="experience-card">
-                <div class="experience-meta">
-                    <span><i class="fas fa-building"></i> Tanner Servicios Financieros</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Santiago de Chile</span>
-                    <span><i class="fas fa-calendar-alt"></i> Sep 2022 - Nov 2022</span>
+                <div id="alert-banner"></div>
+            </div>
+        </section>
+
+        <!-- RPA LAB -->
+        <section id="rpa-lab" class="terminal-card">
+            <h2>🤖 RPA Lab - Automatización Robótica</h2>
+            <p>Simulación de scripts UiPath, Python y Selenium</p>
+            <div class="rpa-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dot"></div><div class="terminal-dot"></div><div class="terminal-dot"></div>
+                    <span>rpa-simulator</span>
                 </div>
-                <h3>Gerente CTO CIO &amp; OPS (Interino)</h3>
-                <h4>Automatización de gestión de configuraciones</h4>
-                <p>Modernicé flujos de operación y trazabilidad de activos TI para reportes y decisiones ejecutivas.</p>
-                <ul>
-                    <li>Migré datos de cinco fuentes a la CMDB de Aranda con macros en Excel y SQL, asegurando integridad total.</li>
-                    <li>Creé dashboards en Power BI y reportes automatizados que aceleraron la toma de decisiones sobre activos.</li>
-                    <li>Colaboré con equipos de TI para resolver incidencias técnicas y consolidar el control del inventario tecnológico.</li>
-                </ul>
-            </article>
-        </div>
-    </section>
-    <!-- Página Habilidades -->
-    <section id="skills" class="skills fade-in">
-        <h2 style="text-align: center;">Habilidades y Competencias</h2>
-        <p class="section-subtitle">Combinación de ingeniería de software, prácticas DevOps y liderazgo para acelerar iniciativas digitales con calidad de entrega y foco en observabilidad.</p>
-        <div class="skills-container">
-            <!-- Sección de Habilidades -->
-            <div class="section">
-                <h3><i class="fas fa-code"></i> Habilidades Técnicas</h3>
-                <div class="skills-list">
-                    <div class="skill">
-                        <i class="fab fa-html5"></i>
-                        <h4>HTML</h4>
-                        <div class="tooltip">Semántica accesible y optimización SEO.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-css3-alt"></i>
-                        <h4>CSS</h4>
-                        <div class="tooltip">Sistemas de diseño escalables y responsive.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-js-square"></i>
-                        <h4>JavaScript</h4>
-                        <div class="tooltip">Aplicaciones SPA/SSR con foco en performance.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-java"></i>
-                        <h4>Java</h4>
-                        <div class="tooltip">Servicios de misión crítica y APIs enterprise.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-php"></i>
-                        <h4>PHP</h4>
-                        <div class="tooltip">Backends robustos y escalables.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-angular"></i>
-                        <h4>Angular</h4>
-                        <div class="tooltip">Experiencias modulares para enterprise UX.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-react"></i>
-                        <h4>React</h4>
-                        <div class="tooltip">Interfaces reactivas con micro frontends.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-docker"></i>
-                        <h4>Docker</h4>
-                        <div class="tooltip">Empaquetado portable y consistente.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-kubernetes"></i>
-                        <h4>Kubernetes</h4>
-                        <div class="tooltip">Orquestación autoscalable y resiliente.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-github"></i>
-                        <h4>GitHub</h4>
-                        <div class="tooltip">Workflows CI/CD y colaboración ágil.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-terraform"></i>
-                        <h4>Terraform</h4>
-                        <div class="tooltip">Infraestructura como código multi-cloud.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-bitbucket"></i>
-                        <h4>Bitbucket</h4>
-                        <div class="tooltip">Repositorios Git con pipelines integrados.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-jira"></i>
-                        <h4>Jira</h4>
-                        <div class="tooltip">Gestión ágil de proyectos y backlogs.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-confluence"></i>
-                        <h4>Confluence</h4>
-                        <div class="tooltip">Documentación colaborativa para equipos.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-rocket"></i>
-                        <h4>ArgoCD</h4>
-                        <div class="tooltip">Implementaciones GitOps para Kubernetes.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-cloud"></i>
-                        <h4>OCI</h4>
-                        <div class="tooltip">Operación de cargas Oracle Cloud Infrastructure.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-network-wired"></i>
-                        <h4>Tandem</h4>
-                        <div class="tooltip">Integraciones bancarias y procesamiento transaccional.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-ibm"></i>
-                        <h4>IBM</h4>
-                        <div class="tooltip">Soluciones enterprise sobre ecosistema IBM.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fab fa-linux"></i>
-                        <h4>Linux</h4>
-                        <div class="tooltip">Administración de servidores basados en Linux.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-server"></i>
-                        <h4>Microsoft Server</h4>
-                        <div class="tooltip">Servicios on-premise y Active Directory.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-project-diagram"></i>
-                        <h4>SDM</h4>
-                        <div class="tooltip">Gobernanza de servicios y entrega ITIL.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-tasks"></i>
-                        <h4>ClickUp</h4>
-                        <div class="tooltip">Orquestación de tareas y flujos de trabajo.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-warehouse"></i>
-                        <h4>Odoo</h4>
-                        <div class="tooltip">Automatización ERP y módulos integrados.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-tachometer-alt"></i>
-                        <h4>JMeter</h4>
-                        <div class="tooltip">Pruebas de carga y stress para aplicaciones.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-fire-extinguisher"></i>
-                        <h4>OWASP ZAP</h4>
-                        <div class="tooltip">Auditorías dinámicas de seguridad web.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-database"></i>
-                        <h4>Nexus</h4>
-                        <div class="tooltip">Gestión de artefactos y repositorios DevOps.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-search"></i>
-                        <h4>Nessus</h4>
-                        <div class="tooltip">Escaneo de vulnerabilidades e informes de riesgo.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-chart-line"></i>
-                        <h4>Grafana</h4>
-                        <div class="tooltip">Dashboards de observabilidad en tiempo real.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-infinity"></i>
-                        <h4>Thanos</h4>
-                        <div class="tooltip">Escalado de métricas Prometheus a largo plazo.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-eye"></i>
-                        <h4>Loki</h4>
-                        <div class="tooltip">Gestión centralizada de logs cloud native.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-fire"></i>
-                        <h4>Prometheus</h4>
-                        <div class="tooltip">Monitoreo con métricas y alertas eficientes.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-wave-square"></i>
-                        <h4>Dynatrace</h4>
-                        <div class="tooltip">Observabilidad full-stack con IA aplicada.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-shield-alt"></i>
-                        <h4>Veracode</h4>
-                        <div class="tooltip">Escaneo de seguridad continuo en aplicaciones.</div>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-broadcast-tower"></i>
-                        <h4>SonarQube</h4>
-                        <div class="tooltip">Calidad de código y análisis estático.</div>
-                    </div>
+                <div id="rpa-output"></div>
+            </div>
+        </section>
+
+        <!-- Experiencia profesional -->
+        <section id="experience">
+            <h2>Experiencia Profesional</h2>
+            <p class="section-subtitle">Pasa el cursor sobre cada empresa para ver los detalles</p>
+            <div class="timeline">
+                <!-- Las 5 experiencias con iconos y hover (se muestran igual que antes) -->
+                <div class="experience-card"><div class="exp-header"><i class="fas fa-car"></i><h3>Ingeniero DevOps</h3><span class="company">Americar Tech</span></div><div class="exp-details"><ul><li>Automaticé pipelines CI/CD en AWS con Docker, Kubernetes, Bitbucket y Terraform, acelerando despliegues en 60%.</li><li>Fortalecí observabilidad y autoescalado con Kubernetes y Helm para sostener 99.9% de disponibilidad.</li></ul><div class="exp-date">Jun 2025 - Sept 2025 | Santiago, Chile</div></div></div>
+                <div class="experience-card"><div class="exp-header"><i class="fas fa-rocket"></i><h3>Fundador y Desarrollador Web</h3><span class="company">Emprendimiento Propio</span></div><div class="exp-details"><ul><li>Mejoré el flujo de usuario y conversión en e-commerce.</li><li>Optimicé despliegues con GitHub Actions y contenedores.</li></ul><div class="exp-date">Mar 2025 - Presente | Santiago, Chile</div></div></div>
+                <div class="experience-card"><div class="exp-header"><i class="fas fa-chalkboard-teacher"></i><h3>Analista de Operaciones</h3><span class="company">Grupo Tawa</span></div><div class="exp-details"><ul><li>Coordiné proyectos operativos para Samsung.</li><li>Implementé POS y gestión de proveedores.</li></ul><div class="exp-date">Oct 2024 - Mar 2025 | Santiago, Chile</div></div></div>
+                <div class="experience-card"><div class="exp-header"><i class="fas fa-chart-line"></i><h3>Ingeniero DevOps Practitioner</h3><span class="company">Asesorías Valor Único (BCI)</span></div><div class="exp-details"><ul><li>Lideré pipelines con Jenkins, GitHub Actions y DevSecOps.</li><li>Integré Veracode y cumplimiento regulatorio.</li></ul><div class="exp-date">May 2023 - Jul 2024 | Santiago, Chile</div></div></div>
+                <div class="experience-card"><div class="exp-header"><i class="fas fa-chart-pie"></i><h3>Gerente CTO CIO & OPS (Interino)</h3><span class="company">Tanner Servicios Financieros</span></div><div class="exp-details"><ul><li>Migración CMDB con macros y SQL.</li><li>Dashboards Power BI para toma de decisiones.</li></ul><div class="exp-date">Sep 2022 - Nov 2022 | Santiago, Chile</div></div></div>
+            </div>
+        </section>
+
+        <!-- Proyectos -->
+        <section id="projects">
+            <h2>Proyectos Destacados</h2>
+            <div class="project-grid">
+                <div class="project">
+                    <h3><i class="fas fa-shopping-cart"></i> E-commerce FaroPets</h3>
+                    <p><strong>Proyecto de título con .NET C#</strong> – Plataforma web para pymes del rubro animalista. Arquitectura de microservicios, orquestación con Kubernetes, CI/CD con GitHub Actions, base de datos SQL Server y frontend en React.</p>
+                    <a href="https://github.com/YPoolBVelez/Faropets" target="_blank">Ver repositorio <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project">
+                    <h3><i class="fas fa-industry"></i> Setecma</h3>
+                    <p>Sitio web para arriendo de maquinaria industrial. Dockerizado, desplegado en AWS con GitHub Actions.</p>
+                    <a href="https://github.com/YPoolBVelez/setecma" target="_blank">Ver repositorio <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project">
+                    <h3><i class="fas fa-code-branch"></i> CI/CD Pipeline Demo</h3>
+                    <p>Demostración de pipeline completo con GitHub Actions + Jenkins + SonarQube.</p>
+                    <a href="https://github.com/YPoolBVelez/cicd-demo" target="_blank">Próximamente <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
+        </section>
 
-            <!-- Sección de Competencias -->
-            <div class="section">
-                <h3><i class="fas fa-chalkboard"></i> Habilidades Clave</h3>
-                <div class="skills-list">
-                    <div class="competency">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <h4>Liderazgo</h4>
-                        <div class="tooltip">Ejecuto roadmaps técnicos con coaching a squads.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-users"></i>
-                        <h4>Trabajo en Equipo</h4>
-                        <div class="tooltip">Facilitador de ceremonias ágiles y feedback continuo.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-comment-dots"></i>
-                        <h4>Comunicación</h4>
-                        <div class="tooltip">Traducción de criterios técnicos a negocio.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-sync-alt"></i>
-                        <h4>Adaptabilidad</h4>
-                        <div class="tooltip">Pivot rápido ante nuevos retos o contextos.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-tools"></i>
-                        <h4>Resolución de Problemas</h4>
-                        <div class="tooltip">Diagnóstico y remediación basada en observabilidad.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-lightbulb"></i>
-                        <h4>Creatividad</h4>
-                        <div class="tooltip">Diseño de soluciones centradas en el usuario.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-tasks"></i>
-                        <h4>Gestión de Proyectos</h4>
-                        <div class="tooltip">Control de alcance, entregables y métricas DORA.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-calendar-alt"></i>
-                        <h4>Gestión del Tiempo</h4>
-                        <div class="tooltip">Priorización y foco en valor entregado.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-user-cog"></i>
-                        <h4>Gestión de Equipos</h4>
-                        <div class="tooltip">Estructuración de squads y roles clave.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-shield-alt"></i>
-                        <h4>Seguridad Informática</h4>
-                        <div class="tooltip">DevSecOps, hardening y compliance continuo.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-bullhorn"></i>
-                        <h4>Marketing Digital</h4>
-                        <div class="tooltip">Lanzamientos multicanal con data-driven marketing.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-flask"></i>
-                        <h4>Innovación Continua</h4>
-                        <div class="tooltip">Experimentación controlada para validar hipótesis.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-chart-pie"></i>
-                        <h4>Data-Driven Decisions</h4>
-                        <div class="tooltip">Uso de métricas y KPIs para priorizar iniciativas.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-handshake"></i>
-                        <h4>Gestión de Stakeholders</h4>
-                        <div class="tooltip">Alineación de expectativas y comunicación ejecutiva.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-dna"></i>
-                        <h4>Cultura DevOps</h4>
-                        <div class="tooltip">Integración continua y colaboración cross-funcional.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-compass"></i>
-                        <h4>Pensamiento Estratégico</h4>
-                        <div class="tooltip">Definición de visión tecnológica alineada al negocio.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-exchange-alt"></i>
-                        <h4>Gestión del Cambio</h4>
-                        <div class="tooltip">Planificación e implementación de nuevas capacidades.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-user-graduate"></i>
-                        <h4>Mentoría Técnica</h4>
-                        <div class="tooltip">Upskilling de equipos mediante acompañamiento continuo.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <h4>Gestión de Riesgos</h4>
-                        <div class="tooltip">Identificación temprana y planes de mitigación efectivos.</div>
-                    </div>
-                    <div class="competency">
-                        <i class="fas fa-bullseye"></i>
-                        <h4>Orientación a Resultados</h4>
-                        <div class="tooltip">Entrega de valor medible en ciclos de mejora continua.</div>
-                    </div>
-                </div>
+        <!-- Contacto -->
+        <section id="contact">
+            <div class="contact-container">
+                <h2>Contacto</h2>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:yanpoolvelez@gmail.com">yanpoolvelez@gmail.com</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/yan-pool-bedoya-velez/" target="_blank">linkedin.com/in/yan-pool-bedoya-velez</a></p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/YPoolBVelez" target="_blank">github.com/YPoolBVelez</a></p>
             </div>
-        </div>
-    </section>
+        </section>
 
-        <!-- Página Proyectos -->
-    <section id="projects" class="projects fade-in">
-        <h2>Proyectos Destacados</h2>
-        <p class="section-subtitle">Casos reales donde lideré la estrategia tecnológica, la arquitectura y la entrega continua para impulsar indicadores de negocio.</p>
-        <div class="project-grid">
-            <article class="project">
-                <div class="project-header">
-                    <h3><i class="fas fa-shopping-cart"></i>E-commerce FaroPets</h3>
-                    <span class="badge">Retail</span>
-                </div>
-                <p>Proyecto de título: plataforma web para pymes del rubro animalista que democratiza el acceso al comercio electrónico con una solución funcional, escalable y segura.</p>
-                <p>FaroPets apoya a microempresas que dependen de recursos propios, ofreciendo un canal accesible para crecer regionalmente y sostener operaciones digitales en sectores emergentes.</p>
-                <div class="project-meta">
-                    <span><i class="fas fa-user-cog"></i> Full Stack </span>
-                    <span><i class="fas fa-tools"></i>.NET · HTML · CSS3 · Bootstrap · MySQL· C#</span>
-                    <span><i class="fas fa-chart-bar"></i> Git Hub · Jira · Draw.io</span>
-                </div>
-                <div class="project-metrics">
-                    <div class="project-metric">
-                        <strong>Experiencia de usuario optimizada</strong>
-                        <span>Diseño centrado en el cliente que potencia navegación y conversión digital.</span>
-                    </div>
-                    <div class="project-metric">
-                        <strong>Arquitectura escalable</strong>
-                        <span>Microservicios orquestados en Kubernetes listos para crecer sin fricciones.</span>
-                    </div>
-                    <div class="project-metric">
-                        <strong>Automatización DevOps</strong>
-                        <span>Pipelines CI/CD con GitHub Actions que reducen riesgos y aceleran el delivery.</span>
-                    </div>
-                </div>
-                <ul>
-                    <li>Arquitectura de microservicios desplegada en Kubernetes con pipelines CI/CD automatizados y observabilidad (Prometheus, Grafana).</li>
-                    <li>Administración multitenant con panel para pymes, métricas de ventas, segmentación de clientes y pricing dinámico.</li>
-                    <li>Integración de pagos PCI compliant, logística automatizada y facturación electrónica desde un único flujo.</li>
-                    <li>Frontend responsivo en React y Angular, backend en Node.js, PHP y C#, optim
-                        <span><i class="fas fa-chart-bar"></i> Kubernetes · Docker · GitHub Actions · Prometheus · Grafana</span>izado para SEO y UX.</li>
-                </ul>
-                <a href="https://github.com/YPoolBVelez/Faropets" target="_blank" rel="noopener noreferrer">Visitar Proyuecto FaroPets<i class="fas fa-arrow-right"></i></a>
-            </article>
-            <article class="project">
-                <div class="project-header">
-                    <h3><i class="fas fa-industry"></i>Setecma</h3>
-                    <span class="badge badge-soft">Arriendo Maquinaria</span>
-                </div>
-                <p>Desarrollé una presencia digital enfocada en visibilizar servicios de arriendo de maquinaria para proyectos industriales.</p>
-                <div class="project-meta">
-                    <span><i class="fas fa-user-cog"></i> Front-End</span>
-                    <span><i class="fas fa-tools"></i> PHP · HTML · CSS · JavaScript </span>
-                </div>
-                <div class="project-metrics">
-                    <div class="project-metric">
-                        <strong>Experiencia de usuario optimizada</strong>
-                        <span>Interfaz responsive con navegación clara y jerarquizada de contenidos.</span>
-                    </div>
-                    <div class="project-metric">
-                        <strong>Arquitectura escalable</strong>
-                        <span>Backend preparado para procesar formularios de contacto y captar nuevos clientes.</span>
-                    </div>
-                    <div class="project-metric">
-                        <strong>Automatización DevOps</strong>
-                        <span>Versionado con GitHub y despliegue continuo orquestado con GitHub Actions.</span>
-                    </div>
-                </div>
-                <ul>
-                    <li>Desarrollé una interfaz responsive que prioriza la lectura de servicios y fomenta la conversión comercial.</li>
-                    <li>Implementé formularios conectados a backend para canalizar oportunidades comerciales en tiempo real.</li>
-                    <li>Apliqué accesibilidad y SEO técnico para mejorar posicionamiento orgánico y presencia regional.</li>
-                    <li>Versioné el proyecto con GitHub y orquesté despliegues automáticos mediante GitHub Actions.</li>
-                </ul>
-                <a href="https://github.com/YPoolBVelez/setecma" target="_blank" rel="noopener noreferrer">Visitar Setecma <i class="fas fa-arrow-right"></i></a>
-            </article>
-                        <article class="project">
-                <div class="project-header">
-                    <h3><i class="fas fa-industry"></i>Asociación de Futból de Lampa</h3>
-                    <span class="badge badge-soft">Asociación</span>
-                </div>
-                <p>Diseñé una página web full stack desde la revisión de partidos a las posiciones de los equipos, la busqueda de jugadores, estadisticas de resultados y mucho más.</p>
-                <div class="project-meta">
-                    <span><i class="fas fa-user-cog"></i> Full Stack</span>
-                    <span><i class="fas fa-tools"></i>  · PHP · MySQL · HTML ·  CSS3 · JavaScript </span>
-                    <span><i class="fas fa-chart-bar"></i> Data Lakes </span>
-                </div>
-                <div class="project-metrics">
-                    <div class="project-metric">
-                        <strong>+68%</strong>
-                        <span>Velocidad en decisiones operativas</span>
-                    </div>
-                    <div class="project-metric">
-                        <strong>-55%</strong>
-                        <span>Incidentes críticos gracias a alertas predictivas</span>
-                    </div>
-                </div>
-                <ul>
-                    <li>Portal informativo con calendario, resultados y noticias del torneo.s</li>
-                    <li>Interfaz responsive optimizada para celulares y redes sociales.</li>
-                    <li> SEO técnico básico para mejorar el alcance en buscadores.</li>
-                    <li>Codigo versionado con buenas practicas.</li>
-                </ul>
-                <a href="https://github.com/YPoolBVelez/AsociacionLampa" target="_blank" rel="noopener noreferrer">Visitar Setecma <i class="fas fa-arrow-right"></i></a>
-            </article>  
-            <article class="project">
-                <div class="project-header">
-                    <h3><i class="fas fa-industry"></i>Venta de Cursos </h3>
-                    <span class="badge badge-soft">E-Commerce</span>
-                </div>
-                <p>Diseñé y desarrollé una página web estática para promocionar cursos online, con enfoque en usabilidad y estructura clara de contenidos.
-El sitio incluye secciones informativas, catálogo de cursos, formulario de contacto y un diseño completamente responsivo, adaptado para distintos dispositivos.</p>
-                <div class="project-meta">
-                    <span><i class="fas fa-user-cog"></i> Front-End    /span>
-                    <span><i class="fas fa-tools"></i> · HTML ·  CSS3</span>
-                </div>
-                <div class="project-metrics">
-                    <div class="project-metric">
-                        <strong> -1 </strong>
-                        <span>tiempo de carga inicial en navegadores modernos.</span>
-                    </div>
-                    <div class="project-metric">
-                        <strong>100%</strong>
-                        <span>adaptativo en distintos tamaños de pantalla.</span>
-                    </div>
-                </div>
-                <a href="https://github.com/YPoolBVelez/VentaCursos" target="_blank" rel="noopener noreferrer">Visitar Setecma <i class="fas fa-arrow-right"></i></a>
-            </article>
-        </div>
-    </section>
-
-
-    <!-- Página Certificaciones -->
-    <section id="education" class="education fade-in">
-        <h2>Formación Académica</h2>
-        <p class="section-subtitle">Especializaciones orientadas a fortalecer la ciberseguridad, la ingeniería de software y la gestión tecnológica.</p>
-        <div class="education-list">
-            <article class="education-item">
-                <div class="education-meta">
-                    <span><i class="fas fa-university"></i> Instituto Profesional San Sebastián</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Providencia, Región Metropolitana</span>
-                    <span><i class="fas fa-calendar-alt"></i> Mar 2025 - Presente</span>
-                </div>
-                <h3>Ingeniería en Ciberseguridad</h3>
-                <p>Programa enfocado en gobierno de seguridad, monitoreo avanzado, respuesta ante incidentes y protección de infraestructura crítica.</p>
-            </article>
-            <article class="education-item">
-                <div class="education-meta">
-                    <span><i class="fas fa-university"></i> Universidad Tecnológica INACAP</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Santiago de Chile, Región Metropolitana</span>
-                    <span><i class="fas fa-calendar-alt"></i> Mar 2017 - Jul 2022</span>
-                </div>
-                <h3>Ingeniería en Informática</h3>
-                <p>Especialización en desarrollo de software, arquitectura de sistemas y gestión de proyectos tecnológicos con enfoque DevOps.</p>
-            </article>
-        </div>
-    </section>
-
-<!-- Sección de Certificaciones visualmente atractiva -->
-<section id="certifications" class="certifications-section fade-in">
-  <div class="cert-container">
-    <span class="badge cert-badge-soft"><i class="fas fa-award"></i> Certificaciones destacadas</span>
-    <h2 class="section-title">Certificaciones y Licencias</h2>
-    <p class="section-subtitle">Constancia, crecimiento y aprendizaje continuo en tecnología.</p>
-
-    <div class="cert-marquee" aria-hidden="true">
-      <span><i class="fab fa-coursera"></i> AWS</span>
-      <span><i class="fas fa-network-wired"></i> DevSecOps</span>
-      <span><i class="fas fa-cubes"></i> Terraform</span>
-      <span><i class="fas fa-robot"></i> Jenkins</span>
-      <span><i class="fas fa-infinity"></i> DevOps</span>
+        <footer>
+            <p>© <span id="year"></span> Yan Pool Bedoya Velez - DevOps, CI/CD, Monitoring & RPA Engineer</p>
+        </footer>
     </div>
 
-    <div class="cert-grid">
-      <article class="cert-card">
-        <div class="cert-icon aws"><i class="fab fa-coursera"></i></div>
-        <div class="cert-info">
-          <h3>DevOps on AWS</h3>
-          <span class="cert-badge">AWS</span>
-        </div>
-        <p class="period">Oct 2024 - Presente</p>
-        <p class="desc">Enfoque en automatización, observabilidad y despliegue de infraestructura cloud en AWS.</p>
-        <div class="cert-status">
-          <span class="status-chip active"><i class="fas fa-check-circle"></i> Activa</span>
-        </div>
-      </article>
-
-      <article class="cert-card">
-        <div class="cert-icon terraform"><i class="fas fa-cubes"></i></div>
-        <div class="cert-info">
-          <h3>Terraform</h3>
-          <span class="cert-badge">IaC</span>
-        </div>
-        <p class="period">Ago 2024 - Presente</p>
-        <p class="desc">Provisionamiento IaC seguro en AWS con definiciones reutilizables y control de versiones.</p>
-        <div class="cert-status">
-          <span class="status-chip active"><i class="fas fa-check-circle"></i> Activa</span>
-        </div>
-      </article>
-
-      <article class="cert-card">
-        <div class="cert-icon jenkins"><i class="fas fa-robot"></i></div>
-        <div class="cert-info">
-          <h3>Jenkins con Docker, Kubernetes, Git y CI/CD</h3>
-          <span class="cert-badge">DevOps</span>
-        </div>
-        <p class="period">Ene 2023 - Presente</p>
-        <p class="desc">Optimización de pipelines desde la construcción hasta despliegues en contenedores productivos.</p>
-        <div class="cert-status">
-          <span class="status-chip active"><i class="fas fa-check-circle"></i> Activa</span>
-        </div>
-      </article>
-
-      <article class="cert-card">
-        <div class="cert-icon devops"><i class="fas fa-infinity"></i></div>
-        <div class="cert-info">
-          <h3>DevOps Advanced</h3>
-          <span class="cert-badge">CI/CD</span>
-        </div>
-        <p class="period">Ene 2023 - Presente</p>
-        <p class="desc">Buenas prácticas en integración, entrega continua y liderazgo técnico para entornos empresariales.</p>
-        <div class="cert-status">
-          <span class="status-chip active"><i class="fas fa-check-circle"></i> Activa</span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-<!-- Contacto: versión mejorada para buscador de empleo con GitHub y clic en correo -->
-<section id="contact" class="contact-section">
-  <div class="container">
-    <div class="contact-card">
-      <aside class="contact-info">
-        <h2 style="color: white;">Contacto</h2>
-        <p class="subtitle">¿Interesado en contactarme para oportunidades laborales? Hablemos.</p>
-
-        <ul class="info-list" aria-hidden="false">
-          <li><strong>📍 Ubicación:</strong> Santiago, Chile</li>
-          <li><strong>✉️ Correo:</strong> <a href="mailto:yanpoolvelez@gmail.com?subject=Contacto%20Laboral" target="_blank">yanpoolvelez@gmail.com</a></li>
-          <li><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/yan-pool-bedoya-velez/" target="_blank"> linkedin.com/in/yan-pool-bedoya-velez</a></li>
-          <li><strong>💻 GitHub:</strong> <a href="https://github.com/YPoolBVelez" target="_blank">https://github.com/YPoolBVelez</a></li>
-        </ul>
-
-        <p class="pitch">Respondo dentro de 72 horas laborables y estoy disponible para entrevistas.</p>
-
-        <div class="contact-tags">
-          <span>Abierto a ofertas</span>
-          <span>Buscando posición</span>
-          <span>Full-time / Part-time</span>
-          <span>Disponible para entrevistas</span>
-        </div>
-      </aside>
-
-      <form class="contact-form" id="contactForm" action="https://formsubmit.co/yanpoolvelez@gmail.com" method="POST">>
-        <div class="input-row">
-          <label class="field">
-            <input type="text" name="name" id="name" placeholder="Nombre completo" required>
-          </label>
-
-          <label class="field">
-            <input type="email" name="email" id="email" placeholder="Correo electrónico" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Por favor ingresa un correo electrónico válido">
-          </label>
-        </div>
-
-        <label class="field">
-          <input type="text" name="subject" id="subject" placeholder="Asunto (ej. Postulación - Desarrollador)" required>
-        </label>
-
-        <label class="field textarea-field">
-          <textarea name="message" id="message" placeholder="Mensaje (cuéntame brevemente por qué soy un buen fit)" rows="6" required></textarea>
-        </label>
-
-        <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portafolio web">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-         <input type="hidden" name="_next" value="index.html">
-
-        <div class="actions">
-          <button type="submit" id="submitButton" class="btn">Enviar mensaje</button>
-          <span id="formStatus" class="status" aria-live="polite"></span>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
+    <script src="script.js"></script>
 </body>
 </html>
