@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Laboratorio práctico Full Stack: demos interactivas con React, Vue 3 y diseño de API REST con Laravel.">
+  <meta name="author" content="Yan Pool Bedoya Velez">
+  <title>Full Stack Lab | Yan Pool Bedoya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--bg:#07111f;--panel:#101e30;--panel2:#14263a;--text:#e8f0fa;--muted:#9aacc2;--line:#263b52;--accent:#36d6b0;--blue:#60a5fa;--purple:#c4a1ff}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#102c3d 0,transparent 38%),var(--bg);font-family:Inter,system-ui,sans-serif;color:var(--text);line-height:1.6}
+    a{color:var(--accent);text-decoration:none}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}.top{padding:24px 0;border-bottom:1px solid var(--line)}.top .wrap{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}.brand{font-weight:800;letter-spacing:.02em}.back{border:1px solid var(--line);padding:9px 14px;border-radius:999px}
+    header.hero{padding:72px 0 38px}.eyebrow{color:var(--accent);font-size:.8rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}h1{font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.045em;max-width:850px;margin:16px 0}h2{font-size:1.55rem;margin:0 0 8px}h3{margin:0 0 8px}.lead{font-size:1.1rem;color:var(--muted);max-width:780px}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.tag{border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:#c5d5e7;font-size:.82rem}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:26px 0 42px}.panel{background:linear-gradient(145deg,rgba(20,38,58,.97),rgba(13,27,43,.97));border:1px solid var(--line);border-radius:20px;padding:24px;min-width:0}.panel.full{grid-column:1/-1}.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:18px}.label{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.react{color:var(--blue)}.vue{color:var(--accent)}.laravel{color:var(--purple)}.small{font-size:.9rem;color:var(--muted);margin:0 0 16px}
+    .demo{background:#091522;border:1px solid #263b52;border-radius:14px;padding:16px}.demo-title{font-weight:700;margin-bottom:12px}.form{display:flex;gap:8px;margin-bottom:12px}.form input{flex:1;min-width:0}.input,button{font:inherit;border-radius:10px;padding:10px 12px;border:1px solid #314860;background:#0d1d2d;color:var(--text)}button{cursor:pointer;font-weight:700;background:#123e3b;border-color:#1c7466;color:#c9fff0}button:hover{filter:brightness(1.15)}button.secondary{background:#15263a;border-color:#314860;color:#d4e0ed}.task-list{list-style:none;padding:0;margin:0;display:grid;gap:8px}.task{display:flex;align-items:center;gap:10px;border:1px solid #23384e;border-radius:10px;padding:10px}.task span{flex:1;overflow-wrap:anywhere}.task.done span{text-decoration:line-through;color:#8194aa}.task button{padding:4px 8px;background:transparent;border-color:#43556a;color:#b9c7d7}.empty{color:#8499b1;font-size:.9rem;padding:12px 0}.counter{font-size:.82rem;color:var(--muted);margin-top:12px}.code{white-space:pre-wrap;overflow-wrap:anywhere;background:#07111d;border:1px solid #263b52;border-radius:12px;padding:16px;font: .82rem/1.65 "Fira Code",monospace;color:#c6e4ff;overflow:auto}.endpoint{display:flex;gap:10px;align-items:center;margin:10px 0;padding:10px 12px;background:#0a1827;border-radius:10px}.method{font:700 .75rem "Fira Code",monospace;color:#8cf0c7;min-width:56px}.endpoint code{overflow-wrap:anywhere}.notice{border-left:3px solid var(--purple);background:rgba(196,161,255,.08);padding:14px 16px;color:#d5c7ed;border-radius:0 10px 10px 0;font-size:.9rem}.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.step{border:1px solid var(--line);padding:15px;border-radius:12px}.step b{display:block;margin-bottom:5px}.muted{color:var(--muted)}footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:.85rem;margin-top:38px}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}.panel.full{grid-column:auto}.steps{grid-template-columns:1fr}.panel{padding:18px}.form{flex-wrap:wrap}.form input{flex-basis:100%}header.hero{padding-top:48px}}
+  </style>
+</head>
+<body>
+  <div class="top"><div class="wrap"><div class="brand">YPB / FULL STACK LAB</div><a class="back" href="../index.html">← Volver al portafolio</a></div></div>
+  <header class="hero wrap">
+    <div class="eyebrow">Laboratorio práctico · Desarrollo de software</div>
+    <h1>Una misma solución, tres tecnologías.</h1>
+    <p class="lead">Explora interfaces interactivas de gestión de tareas construidas con React y Vue 3, junto con el diseño de una API REST en Laravel. El ejercicio cubre operaciones CRUD, estado de interfaz, validaciones y contrato HTTP.</p>
+    <div class="tags"><span class="tag">React 18</span><span class="tag">Vue 3</span><span class="tag">Laravel / PHP</span><span class="tag">REST API</span><span class="tag">CRUD</span><span class="tag">Responsive UI</span></div>
+  </header>
+  <main class="wrap">
+    <div class="grid">
+      <section class="panel">
+        <div class="panel-head"><div><div class="label react">Frontend · React</div><h2>Task Board</h2></div><span class="tag">Demo en vivo</span></div>
+        <p class="small">Agrega tareas, márcalas como completadas o elimínalas. El estado se administra con hooks de React.</p>
+        <div id="react-root" class="demo"><p class="muted">Cargando demo React…</p></div>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><div><div class="label vue">Frontend · Vue 3</div><h2>Task Board</h2></div><span class="tag">Demo en vivo</span></div>
+        <p class="small">La misma experiencia implementada con la reactividad de Vue y directivas de plantilla.</p>
+        <div id="vue-root" class="demo"><p class="muted">Cargando demo Vue…</p></div>
+      </section>
+      <section class="panel full">
+        <div class="panel-head"><div><div class="label laravel">Backend · Laravel</div><h2>Diseño de API REST</h2></div><span class="tag">PHP · Eloquent</span></div>
+        <p class="small">Contrato de endpoints para conectar cualquiera de los dos frontends con un backend real. Esta sección documenta el diseño; no ejecuta Laravel en GitHub Pages.</p>
+        <div class="endpoint"><span class="method">GET</span><code>/api/tasks</code><span class="muted">Listar tareas</span></div>
+        <div class="endpoint"><span class="method">POST</span><code>/api/tasks</code><span class="muted">Crear tarea</span></div>
+        <div class="endpoint"><span class="method">PATCH</span><code>/api/tasks/{id}</code><span class="muted">Actualizar estado o título</span></div>
+        <div class="endpoint"><span class="method">DELETE</span><code>/api/tasks/{id}</code><span class="muted">Eliminar tarea</span></div>
+        <h3 style="margin-top:22px">Ejemplo de controlador Laravel</h3>
+        <pre class="code"><code>&lt;?php
+
+namespace App\\Http\\Controllers\\Api;
+
+use App\\Http\\Controllers\\Controller;
+use App\\Models\\Task;
+use Illuminate\\Http\\Request;
+
+class TaskController extends Controller
+{
+    public function index()
+    {
+        return Task::query()-&gt;latest()-&gt;get();
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request-&gt;validate([
+            'title' =&gt; ['required', 'string', 'max:120'],
+        ]);
+
+        return response()-&gt;json(
+            Task::create($data),
+            201
+        );
+    }
+}</code></pre>
+        <div class="notice"><strong>Nota de despliegue:</strong> GitHub Pages publica contenido estático. Para convertir esta API en funcional, se debe desplegar Laravel en un servidor compatible con PHP y configurar la URL de la API, CORS, autenticación y persistencia de datos.</div>
+      </section>
+    </div>
+    <section class="panel full">
+      <h2>Qué demuestra este laboratorio</h2>
+      <div class="steps">
+        <div class="step"><b>01 · Interfaz</b><span class="muted">Componentes, formularios, eventos, validación y estado reactivo.</span></div>
+        <div class="step"><b>02 · API</b><span class="muted">Diseño REST, verbos HTTP, respuestas JSON y validación de entrada.</span></div>
+        <div class="step"><b>03 · Integración</b><span class="muted">Separación frontend/backend y camino de evolución hacia persistencia y pruebas.</span></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">Yan Pool Bedoya Velez · Laboratorio demostrativo para portafolio profesional · <a href="https://github.com/YPoolBVelez">GitHub</a></div></footer>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script type="text/babel">
+    const {useState} = React;
+    function ReactTaskBoard() {
+      const [tasks,setTasks] = useState([
+        {id:1,title:'Diseñar componentes reutilizables',done:true},
+        {id:2,title:'Validar formulario de tareas',done:false},
+        {id:3,title:'Preparar integración con API REST',done:false}
+      ]);
+      const [title,setTitle] = useState('');
+      function addTask(event) {
+        event.preventDefault();
+        const clean = title.trim();
+        if (!clean) return;
+        setTasks(current => [...current,{id:Date.now(),title:clean,done:false}]);
+        setTitle('');
+      }
+      return <div>
+        <div className="demo-title">Mis tareas <span className="muted">/ React useState</span></div>
+        <form className="form" onSubmit={addTask}>
+          <input className="input" aria-label="Nueva tarea React" placeholder="Escribe una tarea…" value={title} onChange={e=>setTitle(e.target.value)} maxLength="120" />
+          <button type="submit">Agregar</button>
+        </form>
+        <ul className="task-list">{tasks.map(task=><li className={'task '+(task.done?'done':'')} key={task.id}>
+          <input aria-label={'Completar '+task.title} type="checkbox" checked={task.done} onChange={()=>setTasks(current=>current.map(item=>item.id===task.id?{...item,done:!item.done}:item))}/>
+          <span>{task.title}</span><button type="button" aria-label={'Eliminar '+task.title} onClick={()=>setTasks(current=>current.filter(item=>item.id!==task.id))}>×</button>
+        </li>)}</ul>
+        <div className="counter">{tasks.filter(t=>t.done).length} completadas · {tasks.length} en total</div>
+      </div>;
+    }
+    ReactDOM.createRoot(document.getElementById('react-root')).render(<ReactTaskBoard />);
+  </script>
+  <script>
+    const {createApp} = Vue;
+    createApp({
+      data(){return {title:'',nextId:4,tasks:[
+        {id:1,title:'Diseñar componentes reutilizables',done:true},
+        {id:2,title:'Validar formulario de tareas',done:false},
+        {id:3,title:'Preparar integración con API REST',done:false}
+      ]}},
+      computed:{completed(){return this.tasks.filter(task=>task.done).length}},
+      methods:{
+        addTask(){const clean=this.title.trim();if(!clean)return;this.tasks.push({id:this.nextId++,title:clean,done:false});this.title=''},
+        removeTask(id){this.tasks=this.tasks.filter(task=>task.id!==id)}
+      }
+    }).mount('#vue-root');
+  </script>
+  <script type="text/x-template" id="vue-template">
+    <div><div class="demo-title">Mis tareas <span class="muted">/ Vue reactivity</span></div>
+      <form class="form" @submit.prevent="addTask"><input class="input" aria-label="Nueva tarea Vue" placeholder="Escribe una tarea…" v-model="title" maxlength="120"><button type="submit">Agregar</button></form>
+      <ul class="task-list"><li v-for="task in tasks" :key="task.id" class="task" :class="{done:task.done}">
+        <input type="checkbox" :aria-label="'Completar '+task.title" v-model="task.done"><span>{{task.title}}</span><button type="button" :aria-label="'Eliminar '+task.title" @click="removeTask(task.id)">×</button>
+      </li></ul><div class="counter">{{completed}} completadas · {{tasks.length}} en total</div>
+    </div>
+  </script>
+  <script>
+    // Mount Vue with the template defined above.
+    const vueRoot = document.getElementById('vue-root');
+    if (vueRoot && window.Vue) {
+      // Re-mount using the explicit template to keep the demo readable and self-contained.
+      vueRoot.innerHTML = '';
+      createApp({
+        template:'#vue-template',
+        data(){return {title:'',nextId:4,tasks:[
+          {id:1,title:'Diseñar componentes reutilizables',done:true},
+          {id:2,title:'Validar formulario de tareas',done:false},
+          {id:3,title:'Preparar integración con API REST',done:false}
+        ]}},
+        computed:{completed(){return this.tasks.filter(task=>task.done).length}},
+        methods:{addTask(){const clean=this.title.trim();if(!clean)return;this.tasks.push({id:this.nextId++,title:clean,done:false});this.title=''},removeTask(id){this.tasks=this.tasks.filter(task=>task.id!==id)}}
+      }).mount('#vue-root');
+    }
+  </script>
+</body>
+</html>
