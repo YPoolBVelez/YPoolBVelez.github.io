@@ -120,21 +120,6 @@ class TaskController extends Controller
     }
     ReactDOM.createRoot(document.getElementById('react-root')).render(<ReactTaskBoard />);
   </script>
-  <script>
-    const {createApp} = Vue;
-    createApp({
-      data(){return {title:'',nextId:4,tasks:[
-        {id:1,title:'Diseñar componentes reutilizables',done:true},
-        {id:2,title:'Validar formulario de tareas',done:false},
-        {id:3,title:'Preparar integración con API REST',done:false}
-      ]}},
-      computed:{completed(){return this.tasks.filter(task=>task.done).length}},
-      methods:{
-        addTask(){const clean=this.title.trim();if(!clean)return;this.tasks.push({id:this.nextId++,title:clean,done:false});this.title=''},
-        removeTask(id){this.tasks=this.tasks.filter(task=>task.id!==id)}
-      }
-    }).mount('#vue-root');
-  </script>
   <script type="text/x-template" id="vue-template">
     <div><div class="demo-title">Mis tareas <span class="muted">/ Vue reactivity</span></div>
       <form class="form" @submit.prevent="addTask"><input class="input" aria-label="Nueva tarea Vue" placeholder="Escribe una tarea…" v-model="title" maxlength="120"><button type="submit">Agregar</button></form>
